@@ -11,9 +11,4 @@ import com.exemplo.produto.model.Produto;
 public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	
 	public List<Produto> findByDescricaoContainingIgnoreCase(String descricao);
-
-	public void delete(Long id);
-
-	public Produto findOne(Long id);
-	
 }

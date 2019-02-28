@@ -18,7 +18,6 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
-@SuppressWarnings("deprecation")
 @Entity(name = "produto")
 public class Produto implements Serializable {
 

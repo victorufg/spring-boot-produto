@@ -1,0 +1,49 @@
+@SequenceGenerator(name = "prod_seq", sequenceName = "prod_seq")
+@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "prod_seq")
+
+@Id
+@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
+http://utf8-chartable.de/
+
+CREATE TABLE produto ( codigo INTEGER PRIMARY KEY, descricao VARCHAR, marca VARCHAR, preco Decimal, data timestamp );
+
+CREATE TABLE produto
+(
+  codigo integer NOT NULL,
+  descricao character varying,
+  marca character varying,
+  preco numeric,
+  data timestamp without time zone,
+  CONSTRAINT produto_pkey PRIMARY KEY (codigo)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE produto
+  OWNER TO postgres;
+
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, length = 10)
+	private TipoPessoa tipo;
+	
+	Classe Cliente
+	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
+	private List<Endereco> enderecos = new ArrayList<>();
+	
+	Classe Endereco
+	@ManyToOne
+	@JoinColumn(name = "cliente_id", nullable = false)
+	private Cliente cliente;
+	
+	---
+	
+	Classe Team
+	@OneToMany(mappedBy = "team", targetEntity = Player.class, fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Player> players;
+	
+	Classe Player
+	@ManyToOne
+	@JoinColumn(name="team_id")
+	private Team team;
+	

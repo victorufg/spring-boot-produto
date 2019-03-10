@@ -23,14 +23,14 @@ public class ProdutoController {
 	//Tela principal do Crud onde sao listados todos os produtos
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	public ModelAndView listarProdutos(ProdutoFilter produtoFilter) {
-		ModelAndView mv = new ModelAndView("/listagemProdutos");
+		ModelAndView mv = new ModelAndView("listagemProdutos");
 		mv.addObject("produtos", service.findByDescricao(produtoFilter.getDescricao()));
 		return mv;
 	}
 	
 	@RequestMapping(value="/adicionar", method=RequestMethod.GET)
 	public ModelAndView adicionar(Produto produto) {
-		ModelAndView mv = new ModelAndView("/cadastroProduto");
+		ModelAndView mv = new ModelAndView("cadastroProduto");
 		mv.addObject("produto", produto);
 		return mv;
 	}

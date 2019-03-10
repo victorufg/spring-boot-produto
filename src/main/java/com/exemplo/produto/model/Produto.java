@@ -21,7 +21,7 @@ import org.springframework.format.annotation.NumberFormat;
 @Entity(name = "produto")
 public class Produto implements Serializable {
 
-	private static final long serialVersionUID = -490977659777224232L;
+	private static final long serialVersionUID = 1L;
 	
 	@Id
 	@SequenceGenerator(name = "prod_seq", sequenceName = "prod_seq", allocationSize=1, initialValue=5)
@@ -111,5 +111,4 @@ public class Produto implements Serializable {
 			return false;
 		return true;
 	}
-
 }

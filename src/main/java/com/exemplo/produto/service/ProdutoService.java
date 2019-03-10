@@ -33,6 +33,4 @@ public class ProdutoService {
 	public List<Produto> findByDescricao(String descricao){
 		return repository.findByDescricaoContainingIgnoreCase(descricao);
 	}
-	
-
 }
